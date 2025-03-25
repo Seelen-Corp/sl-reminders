@@ -21,6 +21,17 @@ jobs:
           webhook_url: ${{ secrets.DISCORD_WEBHOOK }}
           username: Seelen
           message: |-
-            Testing message
-          color: '#f47fff'
+            **✨ Hi there! ✨**
+            This is a reminder to boost the Seelen's community server!
+
+            Why to boost the server?
+            → 🛠️ Indirectly supports **Seelen UI's development**
+            → 🌟 Grants you **exclusive roles & server perks**
+            → 🎁 Helps unlock **community-wide benefits**
+
+            **Click "Server Boost :server_boost:" near the server name!** 💜
+            *(Even 1 boost makes a difference!)*
+
+            *#BoostToSupport*
+          color: "#f47fff"
           avatar_url: https://raw.githubusercontent.com/eythaann/Seelen-UI/refs/heads/master/static/icons/profile_nitro.png
