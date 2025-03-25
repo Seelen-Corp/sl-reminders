@@ -1,0 +1,23 @@
+name: Server Boost Reminder
+
+permissions:
+  contents: write
+
+on:
+  schedule:
+    - cron: "0 12 * * 3" # every wednesday
+    - cron: "0 10 * * 6" # every saturday
+  workflow_dispatch:
+
+jobs:
+  server-boost-reminder:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Send Message to Discord
+        uses: appleboy/discord-action@v1.2.0
+        with:
+          webhook_url: ${{ secrets.DISCORD_WEBHOOK }}
+          username: Seelen
+          message: Testing message
