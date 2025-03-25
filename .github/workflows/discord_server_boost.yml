@@ -19,8 +19,10 @@ jobs:
         uses: appleboy/discord-action@v1.2.0
         with:
           webhook_url: ${{ secrets.DISCORD_WEBHOOK }}
+          avatar_url: https://raw.githubusercontent.com/eythaann/Seelen-UI/refs/heads/master/static/icons/profile_nitro.png
+          color: "#f47fff"
           username: Seelen
-          message: |-
+          message: |
             **✨ Hi there! ✨**
             This is a reminder to boost the Seelen's community server!
 
@@ -33,5 +35,3 @@ jobs:
             *(Even 1 boost makes a difference!)*
 
             *#BoostToSupport*
-          color: "#f47fff"
-          avatar_url: https://raw.githubusercontent.com/eythaann/Seelen-UI/refs/heads/master/static/icons/profile_nitro.png
