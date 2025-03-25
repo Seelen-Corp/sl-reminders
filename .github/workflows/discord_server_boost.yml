@@ -16,13 +16,13 @@ jobs:
       - uses: actions/checkout@master
 
       - name: Send Message to Discord
-        uses: appleboy/discord-action@v1.2.0
+        uses: tsickert/discord-webhook@v7.0.0
         with:
-          webhook_url: ${{ secrets.DISCORD_WEBHOOK }}
-          avatar_url: https://raw.githubusercontent.com/eythaann/Seelen-UI/refs/heads/master/static/icons/profile_nitro.png
-          color: "#f47fff"
+          webhook-url: ${{ secrets.DISCORD_WEBHOOK }}
+          avatar-url: https://raw.githubusercontent.com/eythaann/Seelen-UI/refs/heads/master/static/icons/profile_nitro.png
+          # color: "#f47fff"
           username: Seelen
-          message: |
+          content: |-
             **✨ Hi there! ✨**
             This is a reminder to boost the Seelen's community server!
 
