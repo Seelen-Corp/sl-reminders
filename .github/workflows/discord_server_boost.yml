@@ -20,10 +20,11 @@ jobs:
         with:
           webhook-url: ${{ secrets.DISCORD_WEBHOOK }}
           avatar-url: https://raw.githubusercontent.com/eythaann/Seelen-UI/refs/heads/master/static/icons/profile_nitro.png
-          # color: "#f47fff"
           username: Seelen
-          content: |-
-            **✨ Hi there! ✨**
+          content: Testing Content
+          embed-color: "#f47fff"
+          embed-title: Hi there! ✨
+          embed-description: |-
             This is a reminder to boost the Seelen's community server!
 
             Why to boost the server?
