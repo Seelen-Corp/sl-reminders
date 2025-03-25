@@ -20,4 +20,7 @@ jobs:
         with:
           webhook_url: ${{ secrets.DISCORD_WEBHOOK }}
           username: Seelen
-          message: Testing message
+          message: |-
+            Testing message
+          color: '#f47fff'
+          avatar_url: https://github.com/Seelen-Inc/sl-reminders/blob/master/Profile%20Logo%20Nitro.png?raw=true
