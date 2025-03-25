@@ -2,38 +2,30 @@ name: Server Boost Reminder
 
 on:
   schedule:
-    - cron: "0 12 * * 1" # every monday
-    - cron: "0 10 * * 4" # every thursday
+    - cron: "0 12 * * 3" # every wednesday
+    - cron: "0 10 * * 6" # every saturday
   workflow_dispatch:
 
 jobs:
   server-boost-reminder:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-
       - name: Send Message to Discord
         uses: tsickert/discord-webhook@v7.0.0
         with:
           webhook-url: ${{ secrets.DISCORD_WEBHOOK }}
-          avatar-url: https://raw.githubusercontent.com/eythaann/Seelen-UI/refs/heads/master/static/icons/profile_ko-fi.png
+          avatar-url: https://raw.githubusercontent.com/eythaann/Seelen-UI/refs/heads/master/static/icons/profile_nitro.png
           username: Seelen
-          embed-color: 0xa94609
-          embed-title: Support Seelen's Development 💖
+          embed-color: 0xf47fff
+          embed-title: Hi there! ✨
           embed-description: |-
-            Enjoying Seelen UI? Consider supporting the project through donations!
+            This is a reminder to boost the Seelen's community server!
 
-            **Your support helps:**
-            → 🛠️ Fund ongoing development and maintenance
-            → 🚀 Accelerate new features and improvements
-            → 💻 Cover server and infrastructure costs
+            Why to boost the server?
+            → 🛠️ Indirectly supports **Seelen UI's development**
+            → 🌟 Grants you **exclusive roles & server perks**
+            → 🎁 Helps unlock **community-wide benefits**
 
-            **Ways to support:**
-            <:kofi:1353984463855550505> [Ko-fi](https://ko-fi.com/eythaann)
-            <:patreon:1354044241898115082> [Patreon](https://patreon.com/eythaann)
-            <:github:1354043810568470578> [GitHub Sponsors](https://github.com/sponsors/eythaann)
-
-            Every contribution, big or small, is appreciated! ✨
-
-            *#SupportOpenSource*
-          embed-footer-text: Thank you for being part of our community!
+            **Click "Server Boost" near the server name!** <:server_boost:1353983284618727525>
+            *(Even 1 boost makes a difference!)*
+          embed-footer-text: "*#BoostToSupport*"

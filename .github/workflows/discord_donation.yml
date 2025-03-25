@@ -2,33 +2,35 @@ name: Donation Reminder
 
 on:
   schedule:
-    - cron: "0 12 * * 3" # every wednesday
-    - cron: "0 10 * * 6" # every saturday
+    - cron: "0 12 * * 1" # every monday
+    - cron: "0 10 * * 4" # every thursday
   workflow_dispatch:
 
 jobs:
   server-boost-reminder:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-
       - name: Send Message to Discord
         uses: tsickert/discord-webhook@v7.0.0
         with:
           webhook-url: ${{ secrets.DISCORD_WEBHOOK }}
-          avatar-url: https://raw.githubusercontent.com/eythaann/Seelen-UI/refs/heads/master/static/icons/profile_nitro.png
+          avatar-url: https://raw.githubusercontent.com/eythaann/Seelen-UI/refs/heads/master/static/icons/profile_ko-fi.png
           username: Seelen
-          embed-color: 0xf47fff
-          embed-title: Hi there! ✨
+          embed-color: 0xf76206
+          embed-title: Support Seelen's Development 💖
           embed-description: |-
-            This is a reminder to boost the Seelen's community server!
+            Enjoying Seelen UI? Consider supporting the project through donations!
 
-            Why to boost the server?
-            → 🛠️ Indirectly supports **Seelen UI's development**
-            → 🌟 Grants you **exclusive roles & server perks**
-            → 🎁 Helps unlock **community-wide benefits**
+            **Your support helps:**
+            → 🛠️ Fund ongoing development and maintenance
+            → 🚀 Accelerate new features and improvements
+            → 💻 Cover server and infrastructure costs
 
-            **Click "Server Boost" near the server name!** <:server_boost:1353983284618727525>
-            *(Even 1 boost makes a difference!)*
+            **Ways to support:**
+            <:kofi:1353984463855550505> [Ko-fi](https://ko-fi.com/eythaann)
+            <:patreon:1354044241898115082> [Patreon](https://patreon.com/eythaann)
+            <:github:1354043810568470578> [GitHub Sponsors](https://github.com/sponsors/eythaann)
 
-            *#BoostToSupport*
+            Every contribution, big or small, is appreciated! ✨
+          embed-footer-text: '*#SupportOpenSource*'
+
