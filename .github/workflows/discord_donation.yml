@@ -1,0 +1,34 @@
+name: Donation Reminder
+
+on:
+  schedule:
+    - cron: "0 12 * * 3" # every wednesday
+    - cron: "0 10 * * 6" # every saturday
+  workflow_dispatch:
+
+jobs:
+  server-boost-reminder:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Send Message to Discord
+        uses: tsickert/discord-webhook@v7.0.0
+        with:
+          webhook-url: ${{ secrets.DISCORD_WEBHOOK }}
+          avatar-url: https://raw.githubusercontent.com/eythaann/Seelen-UI/refs/heads/master/static/icons/profile_nitro.png
+          username: Seelen
+          embed-color: 0xf47fff
+          embed-title: Hi there! ✨
+          embed-description: |-
+            This is a reminder to boost the Seelen's community server!
+
+            Why to boost the server?
+            → 🛠️ Indirectly supports **Seelen UI's development**
+            → 🌟 Grants you **exclusive roles & server perks**
+            → 🎁 Helps unlock **community-wide benefits**
+
+            **Click "Server Boost" near the server name!** <:server_boost:1353983284618727525>
+            *(Even 1 boost makes a difference!)*
+
+            *#BoostToSupport*
