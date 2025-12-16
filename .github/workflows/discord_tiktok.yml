@@ -1,0 +1,25 @@
+name: TikTok Social Media
+
+on:
+  schedule:
+    - cron: "0 0 * * 3"  # Wednesday at 00:00 UTC
+    - cron: "0 12 * * 5" # Friday at 12:00 UTC
+  workflow_dispatch:
+
+jobs:
+  tiktok-post:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Send TikTok Image to Discord
+        uses: tsickert/discord-webhook@v7.0.0
+        with:
+          webhook-url: ${{ secrets.DISCORD_WEBHOOK }}
+          avatar-url: https://raw.githubusercontent.com/${{ github.repository }}/master/images/Profile%20Logo%20Socials.png
+          username: Seelen
+          embed-color: 0x000000  # TikTok brand color (black)
+          embed-title: "🎵 Follow us on TikTok!"
+          embed-description: "Watch quick setup demos, feature highlights, and short-form content.\n\n🔗 [**@seelen_corp**](https://www.tiktok.com/@seelen_corp)"
+          embed-image-url: https://raw.githubusercontent.com/${{ github.repository }}/master/images/tiktok.jpg

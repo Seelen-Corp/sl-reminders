@@ -10,30 +10,20 @@ jobs:
   review-reminder:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Read message content
+        id: message
+        run: echo "content=$(cat messages/store_review.md)" >> $GITHUB_OUTPUT
+
       - name: Send Review Reminder to Discord
         uses: tsickert/discord-webhook@v7.0.0
         with:
           webhook-url: ${{ secrets.DISCORD_WEBHOOK }}
-          avatar-url: https://raw.githubusercontent.com/eythaann/Seelen-UI/refs/heads/master/static/icons/profile.png
+          avatar-url: https://raw.githubusercontent.com/${{ github.repository }}/master/images/Profile%20Logo.png
           username: Seelen
           embed-color: 0x0078D7  # Microsoft Store blue color
           embed-title: "Did you review Seelen UI yet? ⭐"
-          embed-description: |-
-            Enjoying Seelen UI? Help others discover it by leaving a review in the Microsoft Store!
-
-            **Why your review matters:**
-            → ⭐ **Visibility Boost** - More stars = More downloads
-            → 🔍 **Discovery** - Helps new users find the app
-            → 🛠️ **Feedback** - Guides future improvements
-
-            **Quick review link:**
-            📱 [Open in Microsoft Store App](ms-windows-store://review/?ProductId=9p67c2d4t9fb)
-            🌍 [Microsoft Store Website](https://apps.microsoft.com/detail/9p67c2d4t9fb)
-
-            **It only takes 1 minute:**
-            1. Click the link above
-            2. Rate with stars
-            3. (Optional) Write a short comment
-
-            Every review helps the project grow! 🙏
+          embed-description: ${{ steps.message.outputs.content }}
           embed-footer-text: "Thank you for supporting Seelen projects! ✨"

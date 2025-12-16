@@ -10,28 +10,20 @@ jobs:
   server-boost-reminder:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Read message content
+        id: message
+        run: echo "content=$(cat messages/donation.md)" >> $GITHUB_OUTPUT
+
       - name: Send Message to Discord
         uses: tsickert/discord-webhook@v7.0.0
         with:
           webhook-url: ${{ secrets.DISCORD_WEBHOOK }}
-          avatar-url: https://raw.githubusercontent.com/eythaann/Seelen-UI/refs/heads/master/static/icons/profile_ko-fi.png
+          avatar-url: https://raw.githubusercontent.com/${{ github.repository }}/master/images/Profile%20Logo%20Kofi.png
           username: Seelen
           embed-color: 0xf76206
           embed-title: Support Seelen's Development 💖
-          embed-description: |-
-            Enjoying Seelen UI? Consider supporting the project through donations!
-
-            **Your support helps:**
-            → 🛠️ Fund ongoing development and maintenance
-            → 🚀 Accelerate new features and improvements
-            → 💻 Cover server and infrastructure costs
-
-            **Ways to support:**
-            <:kofi:1353984463855550505> [Ko-fi](https://ko-fi.com/eythaann)
-            <:patreon:1354044241898115082> [Patreon](https://patreon.com/eythaann)
-            <:github:1354043810568470578> [GitHub Sponsors](https://github.com/sponsors/eythaann)
-            <:paypal:1355068240099016794> [PayPal Me](https://www.paypal.me/eythaann)
-
-            Every contribution, big or small, is appreciated! ✨
+          embed-description: ${{ steps.message.outputs.content }}
           embed-footer-text: '#SupportOpenSource'
-

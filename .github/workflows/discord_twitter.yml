@@ -1,0 +1,26 @@
+name: Twitter Social Media
+
+on:
+  schedule:
+    - cron: "0 12 * * 1" # Monday at 12:00 UTC
+    - cron: "0 0 * * 4"  # Thursday at 00:00 UTC
+    - cron: "0 12 * * 6" # Saturday at 12:00 UTC
+  workflow_dispatch:
+
+jobs:
+  twitter-post:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Send Twitter Image to Discord
+        uses: tsickert/discord-webhook@v7.0.0
+        with:
+          webhook-url: ${{ secrets.DISCORD_WEBHOOK }}
+          avatar-url: https://raw.githubusercontent.com/${{ github.repository }}/master/images/Profile%20Logo%20Socials.png
+          username: Seelen
+          embed-color: 0x1DA1F2  # Twitter brand color
+          embed-title: "🐦 Follow us on X (Twitter)!"
+          embed-description: "Get dev notes, technical insights, and development progress updates.\n\n🔗 [**@seelen_corp**](https://x.com/seelen_corp)"
+          embed-image-url: https://raw.githubusercontent.com/${{ github.repository }}/master/images/twitter.jpg

@@ -1,0 +1,26 @@
+name: Reddit Social Media
+
+on:
+  schedule:
+    - cron: "0 12 * * 2" # Tuesday at 12:00 UTC
+    - cron: "0 0 * * 5"  # Friday at 00:00 UTC
+    - cron: "0 12 * * 0" # Sunday at 12:00 UTC
+  workflow_dispatch:
+
+jobs:
+  reddit-post:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Send Reddit Image to Discord
+        uses: tsickert/discord-webhook@v7.0.0
+        with:
+          webhook-url: ${{ secrets.DISCORD_WEBHOOK }}
+          avatar-url: https://raw.githubusercontent.com/${{ github.repository }}/master/images/Profile%20Logo%20Socials.png
+          username: Seelen
+          embed-color: 0xFF4500  # Reddit brand color
+          embed-title: "🖼️ Join r/Seelen_UI on Reddit!"
+          embed-description: "Browse amazing desktop setups from our community and share your own.\n\n🔗 [**r/Seelen_UI**](https://www.reddit.com/r/Seelen_UI/)"
+          embed-image-url: https://raw.githubusercontent.com/${{ github.repository }}/master/images/reddit.jpg

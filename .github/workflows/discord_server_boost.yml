@@ -10,22 +10,20 @@ jobs:
   server-boost-reminder:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Read message content
+        id: message
+        run: echo "content=$(cat messages/server_boost.md)" >> $GITHUB_OUTPUT
+
       - name: Send Message to Discord
         uses: tsickert/discord-webhook@v7.0.0
         with:
           webhook-url: ${{ secrets.DISCORD_WEBHOOK }}
-          avatar-url: https://raw.githubusercontent.com/eythaann/Seelen-UI/refs/heads/master/static/icons/profile_nitro.png
+          avatar-url: https://raw.githubusercontent.com/${{ github.repository }}/master/images/Profile%20Logo%20Nitro.png
           username: Seelen
           embed-color: 0xf47fff
           embed-title: Hi there! ✨
-          embed-description: |-
-            This is a reminder to boost the Seelen's community server!
-
-            Why to boost the server?
-            → 🛠️ Indirectly supports **Seelen UI's development**
-            → 🌟 Grants you **exclusive roles & server perks**
-            → 🎁 Helps unlock **community-wide benefits**
-
-            **Click "Server Boost" near the server name!** <:server_boost:1353983284618727525>
-            *(Even 1 boost makes a difference!)*
+          embed-description: ${{ steps.message.outputs.content }}
           embed-footer-text: "*#BoostToSupport*"
