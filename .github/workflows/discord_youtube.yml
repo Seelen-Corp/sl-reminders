@@ -22,5 +22,6 @@ jobs:
           username: Seelen
           embed-color: 0xFF0000  # YouTube brand color
           embed-title: "🎬 Subscribe on YouTube!"
-          embed-description: "Watch release videos, feature deep dives, and comprehensive tutorials.\n\n🔗 [**@seelen_corp**](https://www.youtube.com/@seelen_corp)"
+          embed-url: https://www.youtube.com/@seelen_corp
+          embed-description: "Watch release videos, feature deep dives, and comprehensive tutorials."
           embed-image-url: https://raw.githubusercontent.com/${{ github.repository }}/master/images/youtube.jpg

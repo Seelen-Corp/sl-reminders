@@ -22,5 +22,6 @@ jobs:
           username: Seelen
           embed-color: 0xE4405F  # Instagram brand color
           embed-title: "📸 Follow us on Instagram!"
-          embed-description: "Check out our latest stories, desktop showcases, and visual content.\n\n🔗 [**@seelen_corp**](https://www.instagram.com/seelen_corp/)"
+          embed-url: https://www.instagram.com/seelen_corp/
+          embed-description: "Check out our latest stories, desktop showcases, and visual content."
           embed-image-url: https://raw.githubusercontent.com/${{ github.repository }}/master/images/instagram.jpg

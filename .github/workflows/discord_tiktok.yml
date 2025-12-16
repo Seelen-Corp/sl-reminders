@@ -21,5 +21,6 @@ jobs:
           username: Seelen
           embed-color: 0x000000  # TikTok brand color (black)
           embed-title: "🎵 Follow us on TikTok!"
-          embed-description: "Watch quick setup demos, feature highlights, and short-form content.\n\n🔗 [**@seelen_corp**](https://www.tiktok.com/@seelen_corp)"
+          embed-url: https://www.tiktok.com/@seelen_corp
+          embed-description: "Watch quick setup demos, feature highlights, and short-form content."
           embed-image-url: https://raw.githubusercontent.com/${{ github.repository }}/master/images/tiktok.jpg

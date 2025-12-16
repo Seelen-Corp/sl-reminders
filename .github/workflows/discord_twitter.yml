@@ -22,5 +22,6 @@ jobs:
           username: Seelen
           embed-color: 0x1DA1F2  # Twitter brand color
           embed-title: "🐦 Follow us on X (Twitter)!"
-          embed-description: "Get dev notes, technical insights, and development progress updates.\n\n🔗 [**@seelen_corp**](https://x.com/seelen_corp)"
+          embed-url: https://x.com/seelen_corp
+          embed-description: "Get dev notes, technical insights, and development progress updates."
           embed-image-url: https://raw.githubusercontent.com/${{ github.repository }}/master/images/twitter.jpg

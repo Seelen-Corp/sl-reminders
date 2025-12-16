@@ -22,5 +22,6 @@ jobs:
           username: Seelen
           embed-color: 0xFF4500  # Reddit brand color
           embed-title: "🖼️ Join r/Seelen_UI on Reddit!"
-          embed-description: "Browse amazing desktop setups from our community and share your own.\n\n🔗 [**r/Seelen_UI**](https://www.reddit.com/r/Seelen_UI/)"
+          embed-url: https://www.reddit.com/r/Seelen_UI/
+          embed-description: "Browse amazing desktop setups from our community and share your own."
           embed-image-url: https://raw.githubusercontent.com/${{ github.repository }}/master/images/reddit.jpg
