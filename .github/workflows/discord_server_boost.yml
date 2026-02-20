@@ -13,10 +13,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Read message content
-        id: message
-        run: echo "content=$(cat messages/server_boost.md)" >> $GITHUB_OUTPUT
-
       - name: Send Message to Discord
         uses: tsickert/discord-webhook@v7.0.0
         with:
@@ -25,5 +21,23 @@ jobs:
           username: Seelen
           embed-color: 0xf47fff
           embed-title: Hi there! ✨
-          embed-description: ${{ steps.message.outputs.content }}
+          embed-description: |
+            ## Hey there, amazing community! ✨
+
+            **Consider boosting our Discord server!** <:server_boost:1353983284618727525>
+
+            ### 💜 Why Boost?
+            ```diff
+            + 🛠️ Directly supports Seelen UI development
+            + 🌟 Unlock exclusive roles & server perks
+            + 🎁 Help unlock community-wide benefits
+            + ⚡ Get priority support access
+            ```
+
+            ### 🚀 How to Boost
+            **Just click "Server Boost" next to the server name!**
+
+            ━━━━━━━━━━━━━━━━━━━━━━━━
+            *Even 1 boost makes a huge difference!*
+            **#BoostToSupport** 💖
           embed-footer-text: "*#BoostToSupport*"
