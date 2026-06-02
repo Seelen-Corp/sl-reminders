@@ -20,24 +20,4 @@ jobs:
           avatar-url: https://raw.githubusercontent.com/${{ github.repository }}/master/images/Profile%20Logo%20Nitro.png
           username: Seelen
           embed-color: 0xf47fff
-          embed-title: Hi there! ✨
-          embed-description: |
-            ## Hey there, amazing community! ✨
-
-            **Consider boosting our Discord server!** <:server_boost:1353983284618727525>
-
-            ### 💜 Why Boost?
-            ```diff
-            + 🛠️ Directly supports Seelen UI development
-            + 🌟 Unlock exclusive roles & server perks
-            + 🎁 Help unlock community-wide benefits
-            + ⚡ Get priority support access
-            ```
-
-            ### 🚀 How to Boost
-            **Just click "Server Boost" next to the server name!**
-
-            ━━━━━━━━━━━━━━━━━━━━━━━━
-            *Even 1 boost makes a huge difference!*
-            **#BoostToSupport** 💖
-          embed-footer-text: "*#BoostToSupport*"
+          embed-image-url: https://raw.githubusercontent.com/${{ github.repository }}/master/images/discord_boost.jpg
